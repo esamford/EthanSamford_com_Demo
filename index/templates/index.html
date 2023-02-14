@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block base_body_content %}
+
+
+
+<section class="mb-4">
+    <div class="background-image-container py-5 mb-3" data-background-src="{% static 'images/index_header_background.jpg' %}" data-attribution="https://unsplash.com/photos/95YRwf6CNw8">
+        <div class="container-fluid row text-center">
+            <div class="col-auto mx-auto card border-rounded-3 p-3" style="background: rgba(255,255,255,.8)">
+                <img class="rounded-circle mb-2 img-profile mx-auto" src="{% static 'images/index_profile_2.jpg' %}" alt="Ethan Samford">
+                <h1 class="display-5 mb-1">Ethan Samford</h1>
+                <p class="lead fw-normal mb-0">Full-Stack Developer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<section class="container mb-4">
+    <p class="lead fw-normal">Hi, my name is Ethan Samford. I'm a full-stack developer fluent in Python, Flask, Django, Bootstrap, jQuery, and more! Keep reading for a bit more about me, or check out my projects via the navigation bar to see what I've worked on in the past.</p>
+</section>
+
+<section class="container mb-4">
+    <h2>Coding Dojo</h2>
+    <p class="lead fw-normal">In September of 2021, I began training with an online web development school, Coding Dojo, to focus in on web development. Here, I worked on a variety of projects -- including my final project, Shareable Events, which you can see in my list of projects via the navbar. These included the following technologies:</p>
+    <ul class="lead fw-normal list-unstyled my-3 ms-5">
+        <li>
+            <ul class="row align-items-center list-unstyled">
+                <li class="col-md-1 col-sm-12 p-1 me-3">
+                    <span>Front end:</span>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/css3.svg' %}" alt="CSS" data-bs-toggle="tooltip" data-bs-placement="bottom" title="CSS"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">CSS</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/html.svg' %}" alt="HTML" data-bs-toggle="tooltip" data-bs-placement="bottom" title="HTML"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">HTML</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/javascript.svg' %}" alt="JavaScript" data-bs-toggle="tooltip" data-bs-placement="bottom" title="JavaScript"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">JavaScript</small>
+                </li>
+            </ul>
+        </li>
+        <li class="mt-2">
+            <ul class="row align-items-center list-unstyled">
+                <li class="col-md-1 col-sm-12 p-1 me-3">
+                    <span>Back end:</span>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Amazon Web Services</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/flask.svg' %}" alt="Flask" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Flask"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Flask</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/mysql.png' %}" alt="MySQL" data-bs-toggle="tooltip" data-bs-placement="bottom" title="MySQL"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">MySQL</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/python.svg' %}" alt="Python" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Python"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Python</small>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+    </ul>
+    <p class="lead fw-normal">During and after my enrollment, I spent some additional time on my own learning how to use these:</p>
+    <ul class="lead fw-normal list-unstyled my-3 ms-5">
+        <li>
+            <ul class="row align-items-center list-unstyled">
+                <li class="col-md-1 col-sm-12 p-1 me-3">
+                    <span>Front end:</span>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/bootstrap.svg' %}" alt="Bootstrap" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bootstrap"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Bootstrap</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/django.svg' %}" alt="Django" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Django"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Django</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    {# <img class="icon-48" src="{% static 'icons/brands/jquery.svg' %}" alt="jQuery" data-bs-toggle="tooltip" data-bs-placement="bottom" title="jQuery"> #}
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">jQuery</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">MDBootstrap</small>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+    </ul>
+    <p class="lead fw-normal">The training program lasted for around seven months, and I graduated on April 1st, 2022.</p>
+</section>
+
+<section class="container mb-4">
+    <h2>Pittsburg State University</h2>
+    <p class="lead fw-normal">Prior to my enrollment in Coding Dojo, I had also attended Pittsburg State University in Kansas. While I had earned a Bachelor in Business Administration, my primary focus (major) was in Computer Information Systems.</p>
+    <p class="lead fw-normal">Here are some of the relevant classes I took:</p>
+    <table class="table table-striped lead fw-normal">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Course</th>
+                <th scope="col">Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Computer Information Systems</td>
+                <td>Fall 2017</td>
+            </tr>
+            <tr>
+                <td scope="row">Intermediate Programming (C++)</td>
+                <td>Spring 2018</td>
+            </tr>
+            <tr>
+                <td scope="row">Introduction to Programming (Visual Basic)</td>
+                <td>Fall 2018</td>
+            </tr>
+            <tr>
+                <td scope="row">Systems Analysis and Design</td>
+                <td>Spring 2019</td>
+            </tr>
+            <tr>
+                <td scope="row">Database Management</td>
+                <td>Fall 2019</td>
+            </tr>
+            <tr>
+                <td scope="row">Management Information Systems</td>
+                <td>Fall 2019</td>
+            </tr>
+            <tr>
+                <td scope="row">Advanced Database Management</td>
+                <td>Spring 2020</td>
+            </tr>
+            <tr>
+                <td scope="row">E-Business Applications Development</td>
+                <td>Spring 2020</td>
+            </tr>
+            <tr>
+                <td scope="row">Network and Information Security</td>
+                <td>Spring 2020</td>
+            </tr>
+            <tr>
+                <td scope="row">Principles of System Administration</td>
+                <td>Spring 2020</td>
+            </tr>
+            <tr>
+                <td scope="row">Data Analytics: Business Intelligence</td>
+                <td>Fall 2020</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="lead fw-normal">In addition to the classes listed above, I had spent some time outside of class learning these other topics relating to software development:</p>
+    <ul class="lead fw-normal list-unstyled my-3 ms-5">
+        <li>
+            <ul class="row align-items-center list-unstyled">
+                <li class="col-md-auto col-sm-12 p-1 me-3">
+                    <span>Programming languages:</span>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Python</small>
+                </li>
+                <li class="col-auto p-1 me-2">
+                    <small class="border rounded-pill py-1 px-3 bg-white border-2">Java</small>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+    </ul>
+</section>
+-->
+
+<section class="container mb-4">
+    <p class="lead fw-normal">
+        I’m a full-stack developer knowledgeable in Python, the Django and Flask web frameworks, Amazon Web Services, and MySQL databases. I’m a detail-oriented person with a passion for tackling challenging problems with clear benefits for overcoming them. With nearly four years of customer-service work experience, and over four years of development experience, I am able to quickly identify and understand problems, then offer solutions.
+    </p>
+    <p class="lead fw-normal">
+        I spent 2016 to 2020 at Pittsburg State University; my major there was in Computer Information Systems, and I learned a bit about back-end development in the form of MySQL databases. Additional C++ and Visual Basic courses helped teach me the foundations of object-oriented programming. In addition to that, I also spent time outside of class teaching myself how to program using both Java and Python.
+    </p>
+    <p class="lead fw-normal">
+        Between February 2017 and November 2020, I worked as a front desk clerk at my university’s library. This was a customer-service position where I used my interpersonal skills to understand the needs of library patrons so I could most effectively help them. Here I also strengthened my organizational and detail-oriented skills by returning materials after use.
+    </p>
+    <p class="lead fw-normal">
+        Later in 2021, I enrolled in an online bootcamp called Coding Dojo to learn more about full-stack development. This included front-end technologies like HTML, CSS, JavaScript, Bootstrap, and jQuery. Back-end technologies included Python, MySQL, Flask and Django, and Amazon Web Services.
+    </p>
+    <p class="lead fw-normal">
+        After graduating from Coding Dojo in April of 2022, I developed three websites on my own: Shareable Events, my portfolio, and Organize My Route. These were personal projects to demonstrate that I could develop websites, as well as reasons to learn more about subjects I was still unfamiliar with. You can find out more about them on the "Projects" page.
+    </p>
+
+
+</section>
+
+{% endblock base_body_content %}
+
+
+

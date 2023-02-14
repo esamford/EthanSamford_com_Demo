@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="text-center">
+    <h1 class="display-2">
+        {% if error_number %}
+        Error {{ error_number }}
+        {% else %}
+        Error 500
+        {% endif %}
+    </h1>
+    <p class="lead">
+        {% if error_message %}
+        {{ error_message }}
+        {% else %}
+        The server encountered an internal error and was unable to complete your request.
+        {% endif %}
+    </p>
+</div>
+
+{% endblock content %}
+
+
+
+

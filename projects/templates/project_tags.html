@@ -1,0 +1,7 @@
+<div class="row mx-auto w-100 ">
+    {% for technology in project.get_technologies %}
+    <div class="col-auto p-1">
+        <small class="border rounded-pill py-1 px-2">{{ technology.name }}</small>
+    </div>
+    {% endfor %}
+</div>

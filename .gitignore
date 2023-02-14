@@ -1,0 +1,5 @@
+venv/*
+docs/private_docs/*
+db.sqlite3
+static/uploaded_files/*
+*.pyc

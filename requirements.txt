@@ -1,0 +1,16 @@
+# Website imports:
+django==4.0.4
+djangorestframework==3.13.1
+pillow==9.1.1
+geopy==2.2.0
+
+# Testing imports:
+requests==2.28.1
+
+# AWS EC2 imports:
+wheel
+gunicorn==20.0.2
+
+
+
+

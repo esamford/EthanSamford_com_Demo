@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects - Ethan Samford{% endblock title %}
+
+
+{% block base_body_content %}
+<div class="container mt-2">
+    <h1 class="mb-3">My Projects</h1>
+    {% if projects %}
+    <div id="project_list" class="container-fluid">
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-lg-4 col-md-12 p-2">
+                    <div class="hover-enlarge card br-10px p-4 h-100 {% if not project.make_public %}border-danger{% endif %}">
+                        <p class="lead fw-normal fst-italic mb-1">{{ project.name }} {% if not project.make_public %}(Hidden){% endif %}</p>
+    
+                        {% if project.start_date_as_month == project.end_date_as_month %}
+                        <small>{{ project.start_date_as_month }}</small>
+                        {% else %}
+                        <small>{{ project.start_date_as_month }} - {{ project.end_date_as_month }}</small>
+                        {% endif %}
+                        <hr class="w-100 mx-auto my-2">
+                        <p class="lead fw-normal mt-2 mb-5">{{ project.short_description }}</p>
+    
+                        <div class="mt-auto">
+                            {% if project.get_technologies.count > 0 %}
+                            {# <hr class="w-100 mx-auto my-2"> #}
+                            <div class="mb-3">
+                                {% include 'project_tags.html' %}
+                            </div>
+                            {% endif %}
+                            <a href="{% url 'show project' id=project.id %}" class="btn {% if project.make_public %}btn-primary{% else %}btn-danger{% endif %} w-100">See more</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock base_body_content %}
+

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - Ethan Samford{% endblock title %}
+
+
+{% block base_body_content %}
+<div class="container mt-2">
+    <h1>Contact</h1>
+    <p class="lead fw-normal">My primy methods of online communication can be found here:</p>
+    <ul class="list-unstyled mb-4">
+        <li class="mb-2">
+            <div class="d-flex align-items-center">
+                <a href="https://www.linkedin.com/in/esamford/" class="icon-32 text-dark me-2" target="_blank">
+                    {% include 'icons/linkedin.html' %}
+                </a>
+                <p class="my-0 ms-2">LinkedIn</p>
+            </div>
+        </li>
+        <li class="mb-2">
+            <div class="d-flex align-items-center">
+                <a href="https://github.com/esamford" class="icon-32 text-dark me-2" target="_blank">
+                    {% include 'icons/github.html' %}
+                </a>
+                <p class="my-0 ms-2">GitHub</p>
+            </div>
+        </li>
+    </ul>
+    <p class="lead fw-normal">If you require other contact information, or if you would just prefer to message me on this website, you can also send me a message using the form below. I'll be able to read it later, and may respond at the provided email if appropriate.</p>
+    <form action="{% url 'contact' %}" method="post" class="card px-3 pb-3 br-10px">
+        {% csrf_token %}
+        {{ message_form.non_field_errors }}
+        <div class="my-2">
+            {{ message_form.first_name.errors }}
+            <label for="id_first_name" class="form-label">First name</label>
+            {{ message_form.first_name }}
+        </div>
+        <div class="my-2">
+            {{ message_form.last_name.errors }}
+            <label for="id_last_name" class="form-label">Last name</label>
+            {{ message_form.last_name }}
+        </div>
+        <div class="my-2">
+            {{ message_form.email.errors }}
+            <label for="id_email" class="form-label">Email</label>
+            {{ message_form.email }}
+        </div>
+        <div class="my-2">
+            {{ message_form.message.errors }}
+            <label for="id_message" class="form-label">Message</label>
+            {{ message_form.message }}
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+    </form>
+</div>
+
+{% endblock base_body_content %}
+
+
+

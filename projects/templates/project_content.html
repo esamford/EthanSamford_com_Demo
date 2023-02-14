@@ -1,0 +1,65 @@
+<div class="container mt-4 rounded-3 p-3">
+    <h1 class="mb-0">{{ project.name }} {% if not project.make_public %}(Hidden){% endif %}</h1>
+    <p class="lead fw-normal mb-1">
+        {% if project.start_date == project.end_date %}
+        {{ project.start_date }}
+        {% else %}
+        {{ project.start_date }} - {{ project.end_date }}
+        {% endif %}
+    </p>
+    {% include 'project_tags.html' %}
+    <hr>
+
+    {% if project.get_project_images.count > 0 %}
+    <!-- Modal for displaying images -->
+    <div id="image_modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-1">
+                    <img class="modal-image d-block mx-auto" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Display image thumbnails -->
+    <div class="container">
+        <div class="row">
+            {# https://css-tricks.com/creating-a-modal-image-gallery-with-bootstrap-components/ #}
+            {% for project_image in project.get_project_images %}
+            <div class="col-md-2 col-sm-4 p-1">
+                <div class="hover-enlarge rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ project_image.name }}">
+                    <img class="project-image-thumbnail img-thumbnail d-block m-auto" src="{{ project_image.image.url }}" alt="{{ project_image.name }}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Set the modal data, then open the modal, when an image thumbnail is clicked -->
+    <script>
+        $(document).ready(function() {
+            $('.project-image-thumbnail').each(function() {
+                $(this).on('click',
+                    function() {
+                        console.log($(this).attr('src'));
+                        $('#image_modal .modal-body img').attr('src', $(this).attr('src'));
+                        $('#image_modal .modal-body img').attr('alt', $(this).attr('alt'));
+                        $('#image_modal .modal-title').text($(this).attr('alt'))
+                        $('#image_modal').modal('show');
+                    }
+                )
+            })
+        })
+    </script>
+    <hr class="d-none d-sm-block ">
+    {% endif %}
+
+    <div id="project_page_description">
+        {% for paragraph in project.page_description_paragraphs %}
+        <p class="lead fw-normal">{{ paragraph | safe }}</p>
+        {% endfor %}
+    </div>
+</div>

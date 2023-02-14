@@ -1,0 +1,82 @@
+
+body {
+    min-height: 100%;
+    background-color: rgb(241, 239, 240);
+}
+
+.background-image-container {
+    /* background-image: url(attr(data-background-src)); /**/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: inherit;
+}
+
+.img-profile, .img-profile * {
+    max-width: 256px;
+    max-height: 256px;
+    width: 35vw;
+    height: calc(width);
+}
+
+.icon-128, .icon-128 * {
+    height: 128px;
+    width: 128px;
+    object-fit: contain;
+}
+
+.icon-48, .icon-48 * {
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+}
+
+.icon-32, .icon-32 * {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+.icon-16, .icon-16 * {
+    height: 16px;
+    width: 16px;
+    object-fit: contain;
+}
+
+.hover-enlarge {
+    transition: transform .25s;
+    transform: scale(1);
+}
+.hover-enlarge:hover {
+    transition: transform .25s;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 8px black;
+}
+
+.project-image-thumbnail {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.modal-image {
+    min-width: 20vw;
+    max-width: 100%;
+    /* max-height: 75vh; */
+}
+
+.project-background-image {
+    height: 40vh;
+}
+
+.project-content-overlay {
+    position: relative;
+    top: -35vh;
+    margin: 3vw 3vw -35vh;
+    background: rgba(255, 255, 255, .95);
+}
+
+.br-10px {
+    border-radius: 10px;
+}
+
+

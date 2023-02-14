@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ project.name }} - Ethan Samford{% endblock title %}
+
+
+{% block base_body_content %}
+
+{% if project.background_image %}
+<div class="background-image-container py-5 mb-3 project-background-image" data-background-src="{{ project.background_image.url }}">
+</div>
+<div class="project-content-overlay card br-10px">
+    {% include 'project_content.html' %}
+</div>
+{% else %}
+    {% include 'project_content.html' %}
+{% endif %}
+
+
+
+
+{% endblock base_body_content %}
+
